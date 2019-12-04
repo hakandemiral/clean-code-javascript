@@ -56,7 +56,7 @@ const yyyymmdstr = moment().format("YYYY/MM/DD");
 const currentDate = moment().format("YYYY/MM/DD");
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Use the same vocabulary for the same type of variable
 
@@ -74,7 +74,7 @@ getCustomerRecord();
 getUser();
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Use searchable names
 
@@ -102,7 +102,7 @@ const MILLISECONDS_IN_A_DAY = 86400000;
 setTimeout(blastOff, MILLISECONDS_IN_A_DAY);
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Use explanatory variables
 
@@ -126,7 +126,7 @@ const [, city, zipCode] = address.match(cityZipCodeRegex) || [];
 saveCityZipCode(city, zipCode);
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Avoid Mental Mapping
 
@@ -161,7 +161,7 @@ locations.forEach(location => {
 });
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Don't add unneeded context
 
@@ -196,7 +196,7 @@ function paintCar(car) {
 }
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Use default arguments instead of short circuiting or conditionals
 
@@ -222,7 +222,7 @@ function createMicrobrewery(name = "Hipster Brew Co.") {
 }
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ## **Fonksiyonlar**
 
@@ -278,7 +278,7 @@ createMenu({
 });
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Functions should do one thing
 
@@ -314,7 +314,7 @@ function isActiveClient(client) {
 }
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Function names should say what they do
 
@@ -342,7 +342,7 @@ const date = new Date();
 addMonthToDate(1, date);
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Functions should only be one level of abstraction
 
@@ -414,7 +414,7 @@ function parse(tokens) {
 }
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Remove duplicate code
 
@@ -500,7 +500,7 @@ function showEmployeeList(employees) {
 }
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Set default objects with Object.assign
 
@@ -553,7 +553,7 @@ function createMenu(config) {
 createMenu(menuConfig);
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Don't use flags as function parameters
 
@@ -583,7 +583,7 @@ function createTempFile(name) {
 }
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Avoid Side Effects (part 1)
 
@@ -632,7 +632,7 @@ console.log(name); // 'Ryan McDermott';
 console.log(newName); // ['Ryan', 'McDermott'];
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Avoid Side Effects (part 2)
 
@@ -685,7 +685,7 @@ const addItemToCart = (cart, item) => {
 };
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Don't write to global functions
 
@@ -719,7 +719,7 @@ class SuperArray extends Array {
 }
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Favor functional programming over imperative programming
 
@@ -784,7 +784,7 @@ const totalOutput = programmerOutput.reduce(
 );
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Encapsulate conditionals
 
@@ -808,7 +808,7 @@ if (shouldShowSpinner(fsmInstance, listNodeInstance)) {
 }
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Avoid negative conditionals
 
@@ -836,7 +836,7 @@ if (isDOMNodePresent(node)) {
 }
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Avoid conditionals
 
@@ -896,7 +896,7 @@ class Cessna extends Airplane {
 }
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Avoid type-checking (part 1)
 
@@ -925,7 +925,7 @@ function travelToTexas(vehicle) {
 }
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Avoid type-checking (part 2)
 
@@ -962,7 +962,7 @@ function combine(val1, val2) {
 }
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Don't over-optimize
 
@@ -990,7 +990,7 @@ for (let i = 0; i < list.length; i++) {
 }
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Remove dead code
 
@@ -1024,7 +1024,7 @@ const req = newRequestModule;
 inventoryTracker("apples", req, "www.inventory-awesome.io");
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ## **Nesne ve Veri Yapıları**
 
@@ -1087,7 +1087,7 @@ const account = makeBankAccount();
 account.setBalance(100);
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Make objects have private members
 
@@ -1127,7 +1127,7 @@ delete employee.name;
 console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ## **Sınıflar**
 
@@ -1214,7 +1214,7 @@ class Human extends Mammal {
 }
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Use method chaining
 
@@ -1294,7 +1294,7 @@ class Car {
 const car = new Car("Ford", "F-150", "red").setColor("pink").save();
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Prefer composition over inheritance
 
@@ -1364,7 +1364,7 @@ class Employee {
 }
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ## **SOLID**
 
@@ -1426,7 +1426,7 @@ class UserSettings {
 }
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Open/Closed Principle (OCP)
 
@@ -1517,7 +1517,7 @@ class HttpRequester {
 }
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Liskov Substitution Principle (LSP)
 
@@ -1636,7 +1636,7 @@ const shapes = [new Rectangle(4, 5), new Rectangle(4, 5), new Square(5)];
 renderLargeShapes(shapes);
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Interface Segregation Principle (ISP)
 
@@ -1714,7 +1714,7 @@ const $ = new DOMTraverser({
 });
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Dependency Inversion Principle (DIP)
 
@@ -1817,7 +1817,7 @@ const inventoryTracker = new InventoryTracker(
 inventoryTracker.requestItems();
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ## **Test Yapmak**
 
@@ -1888,7 +1888,7 @@ describe("MomentJS", () => {
 });
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ## **Eşzamanlılık**
 
@@ -1939,7 +1939,7 @@ get("https://en.wikipedia.org/wiki/Robert_Cecil_Martin")
   });
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Async/Await are even cleaner than Promises
 
@@ -1988,7 +1988,7 @@ async function getCleanCodeArticle() {
 getCleanCodeArticle()
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ## **Hata Yönetimi**
 
@@ -2067,7 +2067,7 @@ getdata()
   });
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ## **Biçimlendirme**
 
@@ -2118,7 +2118,7 @@ class Animal {}
 class Alpaca {}
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Function callers and callees should be close
 
@@ -2206,7 +2206,7 @@ const review = new PerformanceReview(employee);
 review.perfReview();
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ## **Yorumlar**
 
@@ -2253,7 +2253,7 @@ function hashIt(data) {
 }
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Don't leave commented out code in your codebase
 
@@ -2274,7 +2274,7 @@ doStuff();
 doStuff();
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Don't have journal comments
 
@@ -2303,7 +2303,7 @@ function combine(a, b) {
 }
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ### Avoid positional markers
 
@@ -2342,7 +2342,7 @@ const actions = function() {
 };
 ```
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
 
 ## Translation
 
@@ -2372,4 +2372,4 @@ This is also available in other languages:
 - ![it](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Italy.png) **Italian**:
   [frappacchio/clean-code-javascript/](https://github.com/frappacchio/clean-code-javascript/)
 
-**[⬆ başa dön](#içindekiler)**
+**[⬆ başa dön](#İçindekiler)**
