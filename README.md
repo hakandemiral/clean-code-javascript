@@ -1,65 +1,62 @@
 # clean-code-javascript
 
-## Table of Contents
+## İçindekiler
 
-1. [Introduction](#introduction)
-2. [Variables](#variables)
-3. [Functions](#functions)
-4. [Objects and Data Structures](#objects-and-data-structures)
-5. [Classes](#classes)
+1. [Giriş](#giriş)
+2. [Değişkenler](#değişkenler)
+3. [Fonksiyonlar](#fonksiyonlar)
+4. [Nesne ve Veri Yapıları](#nesne-ve-veri-yapıları)
+5. [Sınıflar](#sınıflar)
 6. [SOLID](#solid)
-7. [Testing](#testing)
-8. [Concurrency](#concurrency)
-9. [Error Handling](#error-handling)
-10. [Formatting](#formatting)
-11. [Comments](#comments)
-12. [Translation](#translation)
+7. [Test Yapmak](#test-yapmak)
+8. [Eşzamanlılık](#eşzamanlılık)
+9. [Hata Yönetimi](#hata-yönetimi)
+10. [Biçimlendirme](#biçimlendirme)
+11. [Yorumlar](#yorumlar)
+12. [Çeviriler](#çeviriler)
 
-## Introduction
+## Giriş
 
 ![Humorous image of software quality estimation as a count of how many expletives
 you shout when reading code](https://www.osnews.com/images/comics/wtfm.jpg)
 
-Software engineering principles, from Robert C. Martin's book
-[_Clean Code_](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882),
-adapted for JavaScript. This is not a style guide. It's a guide to producing
-[readable, reusable, and refactorable](https://github.com/ryanmcdermott/3rs-of-software-architecture) software in JavaScript.
+Robert C. Martin'in
+[_Clean Code_](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882) isimli kitabından JavaScript'e uyarlanan 
+yazılım mühendisliği ilkelerine bakacağız, bu makale bir yazılım dizayn veya stil rehberi değildir, JavaScript'te
+[okunaklı, tekrar kullanılabilir ve yeniden düzenlenebilir](https://github.com/ryanmcdermott/3rs-of-software-architecture) programlar yazabilmeniz 
+için dikkate almanız gereken şeylerin yer aldığı bir kaynaktır.
 
-Not every principle herein has to be strictly followed, and even fewer will be
-universally agreed upon. These are guidelines and nothing more, but they are
-ones codified over many years of collective experience by the authors of
-_Clean Code_.
+Burada bahsi geçen prensiplere katı bir şekilde bağlı olma zorunluluğunuz yoktur programınız her şekilde çalışaktır, _Clean Code_'un 
+yazarları tarafından uzun yılların getirdiği tecrübe ve evrensel olarak kabul gören prensiplere yer verilmiştir.
 
-Our craft of software engineering is just a bit over 50 years old, and we are
-still learning a lot. When software architecture is as old as architecture
-itself, maybe then we will have harder rules to follow. For now, let these
-guidelines serve as a touchstone by which to assess the quality of the
-JavaScript code that you and your team produce.
+Yazılım mühendisliği zanaatı 50 yaşın üzerinde, halen gelişmeye devam ediyor ve biz de öğrenmeye devam ediyoruz, 
+yazılım mimarisi mimarlığın kendisi kadar eski olsaydı o zaman uymamız gereken çok daha kalıplaşmış, dışına çıkılamayan 
+kurallara bağlı kalmamız gerekebilirdi. Şimdilik bu kuralların ürettiğimiz kodların kaliteli olması için bir mihenk taşı olmasını sağlayalım.
 
-One more thing: knowing these won't immediately make you a better software
-developer, and working with them for many years doesn't mean you won't make
-mistakes. Every piece of code starts as a first draft, like wet clay getting
-shaped into its final form. Finally, we chisel away the imperfections when
-we review it with our peers. Don't beat yourself up for first drafts that need
-improvement. Beat up the code instead!
+Bir şey daha; bu makaledekiler sizi hemen bir yazılım geliştirici yapmaz, 
+_Clean Code_ prensipleriyle yıllarca çalışmak da hiç hata yapmayacağınız anlamına gelmez. 
+Her kod parçası bir taslak olarak başlar ve üzerinde düşünüldükçe gelişir ayrıca diğer 
+geliştiricilerin fikirlerini almak, beraber beyin fırtınası yapmak ufkunuzu genişletecek 
+size çok büyük katkı sağlayacaktır. Geliştirmekte zorlandığınız bir kod ile karşılaştığınızda 
+veya içinden çıkamadığınız bir durumda yetersiz olduğunuzu düşünmeyin. Gidin ve o kodun icabına bakın!
 
-## **Variables**
+## **Değişkenler**
 
-### Use meaningful and pronounceable variable names
+### Anlamlı ve belirgin değişken isimleri kullanın
 
-**Bad:**
+**Kötü Kullanım:**
 
 ```javascript
 const yyyymmdstr = moment().format("YYYY/MM/DD");
 ```
 
-**Good:**
+**İyi Kullanım:**
 
 ```javascript
 const currentDate = moment().format("YYYY/MM/DD");
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Use the same vocabulary for the same type of variable
 
@@ -77,7 +74,7 @@ getCustomerRecord();
 getUser();
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Use searchable names
 
@@ -105,7 +102,7 @@ const MILLISECONDS_IN_A_DAY = 86400000;
 setTimeout(blastOff, MILLISECONDS_IN_A_DAY);
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Use explanatory variables
 
@@ -129,7 +126,7 @@ const [, city, zipCode] = address.match(cityZipCodeRegex) || [];
 saveCityZipCode(city, zipCode);
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Avoid Mental Mapping
 
@@ -164,7 +161,7 @@ locations.forEach(location => {
 });
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Don't add unneeded context
 
@@ -199,7 +196,7 @@ function paintCar(car) {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Use default arguments instead of short circuiting or conditionals
 
@@ -225,9 +222,9 @@ function createMicrobrewery(name = "Hipster Brew Co.") {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
-## **Functions**
+## **Fonksiyonlar**
 
 ### Function arguments (2 or fewer ideally)
 
@@ -281,7 +278,7 @@ createMenu({
 });
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Functions should do one thing
 
@@ -317,7 +314,7 @@ function isActiveClient(client) {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Function names should say what they do
 
@@ -345,7 +342,7 @@ const date = new Date();
 addMonthToDate(1, date);
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Functions should only be one level of abstraction
 
@@ -417,7 +414,7 @@ function parse(tokens) {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Remove duplicate code
 
@@ -503,7 +500,7 @@ function showEmployeeList(employees) {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Set default objects with Object.assign
 
@@ -556,7 +553,7 @@ function createMenu(config) {
 createMenu(menuConfig);
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Don't use flags as function parameters
 
@@ -586,7 +583,7 @@ function createTempFile(name) {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Avoid Side Effects (part 1)
 
@@ -635,7 +632,7 @@ console.log(name); // 'Ryan McDermott';
 console.log(newName); // ['Ryan', 'McDermott'];
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Avoid Side Effects (part 2)
 
@@ -688,7 +685,7 @@ const addItemToCart = (cart, item) => {
 };
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Don't write to global functions
 
@@ -722,7 +719,7 @@ class SuperArray extends Array {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Favor functional programming over imperative programming
 
@@ -787,7 +784,7 @@ const totalOutput = programmerOutput.reduce(
 );
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Encapsulate conditionals
 
@@ -811,7 +808,7 @@ if (shouldShowSpinner(fsmInstance, listNodeInstance)) {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Avoid negative conditionals
 
@@ -839,7 +836,7 @@ if (isDOMNodePresent(node)) {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Avoid conditionals
 
@@ -899,7 +896,7 @@ class Cessna extends Airplane {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Avoid type-checking (part 1)
 
@@ -928,7 +925,7 @@ function travelToTexas(vehicle) {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Avoid type-checking (part 2)
 
@@ -965,7 +962,7 @@ function combine(val1, val2) {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Don't over-optimize
 
@@ -993,7 +990,7 @@ for (let i = 0; i < list.length; i++) {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Remove dead code
 
@@ -1027,9 +1024,9 @@ const req = newRequestModule;
 inventoryTracker("apples", req, "www.inventory-awesome.io");
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
-## **Objects and Data Structures**
+## **Nesne ve Veri Yapıları**
 
 ### Use getters and setters
 
@@ -1090,7 +1087,7 @@ const account = makeBankAccount();
 account.setBalance(100);
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Make objects have private members
 
@@ -1130,9 +1127,9 @@ delete employee.name;
 console.log(`Employee name: ${employee.getName()}`); // Employee name: John Doe
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
-## **Classes**
+## **Sınıflar**
 
 ### Prefer ES2015/ES6 classes over ES5 plain functions
 
@@ -1217,7 +1214,7 @@ class Human extends Mammal {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Use method chaining
 
@@ -1297,7 +1294,7 @@ class Car {
 const car = new Car("Ford", "F-150", "red").setColor("pink").save();
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Prefer composition over inheritance
 
@@ -1367,7 +1364,7 @@ class Employee {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ## **SOLID**
 
@@ -1429,7 +1426,7 @@ class UserSettings {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Open/Closed Principle (OCP)
 
@@ -1520,7 +1517,7 @@ class HttpRequester {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Liskov Substitution Principle (LSP)
 
@@ -1639,7 +1636,7 @@ const shapes = [new Rectangle(4, 5), new Rectangle(4, 5), new Square(5)];
 renderLargeShapes(shapes);
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Interface Segregation Principle (ISP)
 
@@ -1717,7 +1714,7 @@ const $ = new DOMTraverser({
 });
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Dependency Inversion Principle (DIP)
 
@@ -1820,9 +1817,9 @@ const inventoryTracker = new InventoryTracker(
 inventoryTracker.requestItems();
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
-## **Testing**
+## **Test Yapmak**
 
 Testing is more important than shipping. If you have no tests or an
 inadequate amount, then every time you ship code you won't be sure that you
@@ -1891,9 +1888,9 @@ describe("MomentJS", () => {
 });
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
-## **Concurrency**
+## **Eşzamanlılık**
 
 ### Use Promises, not callbacks
 
@@ -1942,7 +1939,7 @@ get("https://en.wikipedia.org/wiki/Robert_Cecil_Martin")
   });
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Async/Await are even cleaner than Promises
 
@@ -1991,9 +1988,9 @@ async function getCleanCodeArticle() {
 getCleanCodeArticle()
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
-## **Error Handling**
+## **Hata Yönetimi**
 
 Thrown errors are a good thing! They mean the runtime has successfully
 identified when something in your program has gone wrong and it's letting
@@ -2070,9 +2067,9 @@ getdata()
   });
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
-## **Formatting**
+## **Biçimlendirme**
 
 Formatting is subjective. Like many rules herein, there is no hard and fast
 rule that you must follow. The main point is DO NOT ARGUE over formatting.
@@ -2121,7 +2118,7 @@ class Animal {}
 class Alpaca {}
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Function callers and callees should be close
 
@@ -2209,9 +2206,9 @@ const review = new PerformanceReview(employee);
 review.perfReview();
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
-## **Comments**
+## **Yorumlar**
 
 ### Only comment things that have business logic complexity.
 
@@ -2256,7 +2253,7 @@ function hashIt(data) {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Don't leave commented out code in your codebase
 
@@ -2277,7 +2274,7 @@ doStuff();
 doStuff();
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Don't have journal comments
 
@@ -2306,7 +2303,7 @@ function combine(a, b) {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ### Avoid positional markers
 
@@ -2345,12 +2342,14 @@ const actions = function() {
 };
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
 
 ## Translation
 
 This is also available in other languages:
 
+- ![tr](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Turkey.png) **Turkish**:
+  [hakandemiral/clean-code-javascript](https://github.com/hakandemiral/clean-code-javascript)
 - ![fr](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/France.png) **French**:
   [GavBaros/clean-code-javascript-fr](https://github.com/GavBaros/clean-code-javascript-fr)
 - ![br](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Brazil.png) **Brazilian Portuguese**: [fesnt/clean-code-javascript](https://github.com/fesnt/clean-code-javascript)
@@ -2373,4 +2372,4 @@ This is also available in other languages:
 - ![it](https://raw.githubusercontent.com/gosquared/flags/master/flags/flags/shiny/24/Italy.png) **Italian**:
   [frappacchio/clean-code-javascript/](https://github.com/frappacchio/clean-code-javascript/)
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ başa dön](#içindekiler)**
